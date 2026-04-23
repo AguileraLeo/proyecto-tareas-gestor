@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+
+    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="assets/img/logo.png" alt="Logo">
+        <h1>Gestor de Tareas</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Tareas</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="formulario-section">
+        <h2>Agregar Nueva Tarea</h2>
+
+        <form id="taskForm">
+            <label>Descripción</label>
+            <textarea id="descripcion" required></textarea>
+
+            <label>Prioridad</label>
+            <select id="prioridad" required>
+                <option value="">Seleccionar</option>
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+            </select>
+
+            <label>Fecha límite</label>
+            <input type="date" id="fecha" required>
+
+            <button type="submit">Agregar tarea</button>
+        </form>
+    </section>
+
+    <section class="kanban">
+
+        <div class="columna pendiente" id="pendientes">
+            <h3>Pendientes <span class="contador">0</span></h3>
+            <div class="tareas-container"></div>
+        </div>
+
+        <div class="columna progreso" id="progreso">
+            <h3>En progreso <span class="contador">0</span></h3>
+            <div class="tareas-container"></div>
+        </div>
+
+        <div class="columna completado" id="completadas">
+            <h3>Completadas <span class="contador">0</span></h3>
+            <div class="tareas-container"></div>
+        </div>
+
+        <div class="columna historial" id="historial">
+            <h3>Historial <span class="contador">0</span></h3>
+            <div class="tareas-container"></div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Leonardo Aguilera / Desarrollo Web + IA</p>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
