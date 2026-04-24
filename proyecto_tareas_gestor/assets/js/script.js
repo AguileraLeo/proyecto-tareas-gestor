@@ -16,6 +16,7 @@ formulario.addEventListener("submit", function(e){
     formulario.reset();
 });
 
+// CREAR TAREA
 function crearTarea(descripcion, prioridad, fecha){
 
     const tarea = document.createElement("article");
@@ -48,11 +49,13 @@ function crearTarea(descripcion, prioridad, fecha){
 
     agregarEventos(tarea, descripcion, prioridad, fecha);
 
-    document.querySelector("#pendientes .tareas-container").appendChild(tarea);
+    document.querySelector("#pendientes .tareas-container")
+        .appendChild(tarea);
 
     actualizarContadores();
 }
 
+// ALERTAS DE FECHA
 function generarAvisoFecha(fecha){
 
     const hoy = new Date();
@@ -76,14 +79,6 @@ function generarAvisoFecha(fecha){
         return `<p class="alerta alerta-hoy">ENTREGA HOY</p>`;
     }
 
-    if(diasRestantes === 3){
-        return `<p class="alerta alerta-3">Faltan 3 días</p>`;
-    }
-
-    if(diasRestantes === 2){
-        return `<p class="alerta alerta-2">Faltan 2 días</p>`;
-    }
-
     if(diasRestantes === 1){
         return `<p class="alerta alerta-1">Último día disponible</p>`;
     }
@@ -95,48 +90,73 @@ function generarAvisoFecha(fecha){
     return "";
 }
 
+// EVENTOS
 function agregarEventos(tarea, descripcion, prioridad, fecha){
 
+    // mover a progreso
     tarea.querySelector(".btn-progreso").onclick = function(){
-        document.querySelector("#progreso .tareas-container").appendChild(tarea);
+        document.querySelector("#progreso .tareas-container")
+            .appendChild(tarea);
+
         actualizarContadores();
     };
 
+    // mover a completadas
     tarea.querySelector(".btn-completar").onclick = function(){
 
-        document.querySelector("#completadas .tareas-container").appendChild(tarea);
+        document.querySelector("#completadas .tareas-container")
+            .appendChild(tarea);
 
         const botones = tarea.querySelector(".botones");
 
         botones.innerHTML = `
-            <button class="btn-eliminar">Eliminar</button>
+            <button class="btn-finalizar">Terminar</button>
         `;
 
-        tarea.querySelector(".btn-eliminar").onclick = function(){
-            moverHistorial(tarea, descripcion, prioridad, fecha);
+        // ahora sí pasa al historial como completada
+        tarea.querySelector(".btn-finalizar").onclick = function(){
+            moverHistorialCompletada(
+                tarea,
+                descripcion,
+                prioridad,
+                fecha
+            );
         };
 
         actualizarContadores();
     };
 
+    // eliminar normal
     tarea.querySelector(".btn-eliminar").onclick = function(){
-        moverHistorial(tarea, descripcion, prioridad, fecha);
+        moverHistorialEliminada(
+            tarea,
+            descripcion,
+            prioridad,
+            fecha
+        );
     };
 }
 
-function moverHistorial(tarea, descripcion, prioridad, fecha){
-
+// HISTORIAL ELIMINADA
+function moverHistorialEliminada(
+    tarea,
+    descripcion,
+    prioridad,
+    fecha
+){
     tarea.remove();
 
     const historial = document.createElement("article");
-    historial.classList.add("tarea");
-    historial.classList.add("historial-eliminado");
+    historial.classList.add(
+        "tarea",
+        "historial-eliminado"
+    );
 
     historial.innerHTML = `
         <h4>${descripcion}</h4>
         <p><strong>Prioridad:</strong> ${prioridad}</p>
         <p><strong>Fecha:</strong> ${fecha}</p>
-        <p><strong>Estado:</strong> Eliminada</p>
+        <p><strong>Estado:</strong> Eliminada </p>
 
         <div class="botones">
             <button class="btn-reactivar">Reactivar</button>
@@ -144,11 +164,12 @@ function moverHistorial(tarea, descripcion, prioridad, fecha){
         </div>
     `;
 
-    document.querySelector("#historial .tareas-container").appendChild(historial);
+    document.querySelector("#historial .tareas-container")
+        .appendChild(historial);
 
     historial.querySelector(".btn-reactivar").onclick = function(){
         historial.remove();
-        crearTareaReactiva(descripcion, prioridad, fecha);
+        crearTarea(descripcion, prioridad, fecha);
         actualizarContadores();
     };
 
@@ -160,12 +181,44 @@ function moverHistorial(tarea, descripcion, prioridad, fecha){
     actualizarContadores();
 }
 
-function crearTareaReactiva(descripcion, prioridad, fecha){
-    crearTarea(descripcion, prioridad, fecha);
-    document.querySelector("#progreso .tareas-container")
-        .appendChild(document.querySelector("#pendientes .tarea:last-child"));
+// HISTORIAL COMPLETADA
+function moverHistorialCompletada(
+    tarea,
+    descripcion,
+    prioridad,
+    fecha
+){
+    tarea.remove();
+
+    const historial = document.createElement("article");
+    historial.classList.add(
+        "tarea",
+        "historial-completado"
+    );
+
+    historial.innerHTML = `
+        <h4>${descripcion}</h4>
+        <p><strong>Prioridad:</strong> ${prioridad}</p>
+        <p><strong>Fecha:</strong> ${fecha}</p>
+        <p><strong>Estado:</strong> Completada </p>
+
+        <div class="botones">
+            <button class="btn-borrar-historial">Eliminar del historial</button>
+        </div>
+    `;
+
+    document.querySelector("#historial .tareas-container")
+        .appendChild(historial);
+
+    historial.querySelector(".btn-borrar-historial").onclick = function(){
+        historial.remove();
+        actualizarContadores();
+    };
+
+    actualizarContadores();
 }
 
+// CONTADORES
 function actualizarContadores(){
     document.querySelectorAll(".columna").forEach(columna=>{
         const total = columna.querySelectorAll(".tarea").length;
