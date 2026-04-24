@@ -1,29 +1,88 @@
-# Proyecto Gestor de Tareas Kanban
+# Gestor Académico Inteligente
 
-## Descripción
+Proyecto desarrollado con HTML, CSS y JavaScript enfocado en la gestión de tareas académicas para estudiantes escolares y universitarios.
 
-Este proyecto fue desarrollado para la **Evaluación N°2 de Diseño y Desarrollo Web + IA**.
+El sistema permite organizar tareas por estados, administrar asignaturas, visualizar alertas de entrega y mantener un historial de tareas finalizadas o eliminadas.
 
-Consiste en un sistema web de gestión de tareas inspirado en un tablero Kanban, donde el usuario puede organizar sus tareas según su estado y prioridad.
+## Funcionalidades principales
 
+### Gestión de tareas
+- Crear tareas académicas
+- Agregar descripción
+- Seleccionar prioridad
+- Definir fecha de entrega
+- Asociar tarea a una asignatura
 
-# Funcionalidades principales
-
+## Gestión de asignaturas
 El sistema permite:
 
-- Crear tareas
-- Asignar prioridad
-- Agregar fecha límite
-- Mover tareas a progreso
-- Completar tareas
-- Eliminar tareas
-- Historial de tareas eliminadas
-- Reactivar tareas eliminadas
-- Borrar tareas definitivamente
-- Alertas automáticas por fecha
-- Aviso de entrega el mismo día
-- Scroll automático en columnas con muchas tareas
-- Diseño responsive
+- Crear asignaturas manualmente
+- Crear asignaturas rápidas al momento de registrar tareas
+- Filtrar tareas por asignatura
+- Compatible para:
+  - colegios
+  - universidades
+  - institutos
+
+## Sistema Kanban
+Las tareas se organizan en columnas:
+
+- Pendientes
+- En progreso
+- Completadas
+- Historial
+
+Esto permite visualizar mejor el flujo de trabajo académico.
+
+## Historial inteligente
+Cuando una tarea pasa al historial:
+
+- Verde → tarea completada
+- Rojo → tarea eliminada
+
+Además:
+
+- puede reactivarse
+- puede eliminarse permanentemente
+
+
+## Alertas automáticas
+El sistema detecta fechas automáticamente:
+
+-  tarea vencida
+-  entrega hoy
+-  faltan pocos días
+-  entrega próxima
+
+
+## Dashboard
+Incluye estadísticas en tiempo real:
+
+- total de tareas
+- tareas pendientes
+- tareas completadas
+- entregas para hoy
+
+
+## Diseño UI/UX
+Se aplicaron mejoras visuales:
+
+- glassmorphism
+- animaciones
+- hover effects
+- scroll personalizado
+- tarjetas flotantes
+- fondos decorativos
+- diseño responsive
+
+
+## Responsive Design
+Adaptado para:
+
+- teléfonos
+- tablets
+- laptops
+- monitores grandes
 
 
 # Tecnologías utilizadas
@@ -31,31 +90,24 @@ El sistema permite:
 - HTML5
 - CSS3
 - JavaScript
-- Git
-- GitHub
-- Visual Studio Code
-- ChatGPT
+- LocalStorage
+
 
 # Estructura del proyecto
 
-proyecto_tareas_gestor/
+/assets
+    /css
+        style.css
+        responsive.css
+    /js
+        script.js
+    /img
+        logo.png
+        libro.png
+        graduacion.png
 
-├── index.html
-├── README.md
+index.html
 
-├── assets/
-│   ├── css/
-│   │   ├── style.css
-│   │   └── responsive.css
-│   │
-│   ├── js/
-│   │   └── script.js
-│   │
-│   ├── img/
-│   │   ├── logo.png
-│   │   └── favicon.ico
-│   │
-│   └── fonts/
+# Autor
 
-└── docs/
-    └── uso_ia.md
+Leonardo Aguilera + IA
