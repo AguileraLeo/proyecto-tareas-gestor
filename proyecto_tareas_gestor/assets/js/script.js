@@ -16,7 +16,6 @@ formulario.addEventListener("submit", function(e){
     formulario.reset();
 });
 
-// CREAR TAREA
 function crearTarea(descripcion, prioridad, fecha){
 
     const tarea = document.createElement("article");
@@ -55,7 +54,6 @@ function crearTarea(descripcion, prioridad, fecha){
     actualizarContadores();
 }
 
-// ALERTAS DE FECHA
 function generarAvisoFecha(fecha){
 
     const hoy = new Date();
@@ -90,10 +88,8 @@ function generarAvisoFecha(fecha){
     return "";
 }
 
-// EVENTOS
 function agregarEventos(tarea, descripcion, prioridad, fecha){
 
-    // mover a progreso
     tarea.querySelector(".btn-progreso").onclick = function(){
         document.querySelector("#progreso .tareas-container")
             .appendChild(tarea);
@@ -101,7 +97,6 @@ function agregarEventos(tarea, descripcion, prioridad, fecha){
         actualizarContadores();
     };
 
-    // mover a completadas
     tarea.querySelector(".btn-completar").onclick = function(){
 
         document.querySelector("#completadas .tareas-container")
@@ -113,7 +108,6 @@ function agregarEventos(tarea, descripcion, prioridad, fecha){
             <button class="btn-finalizar">Terminar</button>
         `;
 
-        // ahora sí pasa al historial como completada
         tarea.querySelector(".btn-finalizar").onclick = function(){
             moverHistorialCompletada(
                 tarea,
@@ -126,7 +120,6 @@ function agregarEventos(tarea, descripcion, prioridad, fecha){
         actualizarContadores();
     };
 
-    // eliminar normal
     tarea.querySelector(".btn-eliminar").onclick = function(){
         moverHistorialEliminada(
             tarea,
@@ -137,7 +130,6 @@ function agregarEventos(tarea, descripcion, prioridad, fecha){
     };
 }
 
-// HISTORIAL ELIMINADA
 function moverHistorialEliminada(
     tarea,
     descripcion,
@@ -218,7 +210,6 @@ function moverHistorialCompletada(
     actualizarContadores();
 }
 
-// CONTADORES
 function actualizarContadores(){
     document.querySelectorAll(".columna").forEach(columna=>{
         const total = columna.querySelectorAll(".tarea").length;
