@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Tareas</title>
+    <title>Gestor Académico Inteligente</title>
 
     <link rel="icon" href="assets/img/favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -14,43 +14,102 @@
 <header>
     <div class="logo">
         <img src="assets/img/logo.png" alt="Logo">
-        <h1>Gestor de Tareas</h1>
+        <h1>Gestor Académico</h1>
     </div>
 
     <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Tareas</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#tareas">Tareas</a></li>
+    </ul>
+</nav>
 </header>
 
 <main>
+
+    <section class="stats">
+        <div class="stat-card">
+            <h3 id="totalTareas">0</h3>
+            <p>Total tareas</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="pendientesCount">0</h3>
+            <p>Pendientes</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="completadasCount">0</h3>
+            <p>Completadas</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="entregasHoyCount">0</h3>
+            <p>Entregas Hoy</p>
+        </div>
+    </section>
+
+    <section class="materias-section">
+        <h2>Gestión de Asignaturas</h2>
+
+        <div class="materia-box">
+            <input type="text" id="nuevaMateria" placeholder="Agregar asignatura">
+            <button id="agregarMateriaBtn">Agregar</button>
+        </div>
+
+        <div class="filtro-box">
+            <label>Filtrar tareas:</label>
+            <select id="filtroMateria">
+                <option value="todas">Todas</option>
+            </select>
+        </div>
+    </section>
 
     <section class="formulario-section">
         <h2>Agregar Nueva Tarea</h2>
 
         <form id="taskForm">
-            <label>Descripción</label>
-            <textarea id="descripcion" required></textarea>
 
-            <label>Prioridad</label>
-            <select id="prioridad" required>
-                <option value="">Seleccionar</option>
-                <option value="alta">Alta</option>
-                <option value="media">Media</option>
-                <option value="baja">Baja</option>
-            </select>
+            <div class="form-group full-width">
+                <label>Descripción</label>
+                <textarea id="descripcion" required></textarea>
+            </div>
 
-            <label>Fecha límite</label>
-            <input type="date" id="fecha" required>
+            <div class="form-group">
+                <label>Seleccionar Asignatura</label>
+                <select id="materiaSelect">
+                    <option value="">Seleccionar</option>
+                </select>
+            </div>
 
-            <button type="submit">Agregar tarea</button>
+            <div class="form-group">
+                <label>Crear nueva asignatura</label>
+                <input type="text" id="materiaRapida">
+            </div>
+
+            <div class="form-group">
+                <label>Prioridad</label>
+                <select id="prioridad" required>
+                    <option value="">Seleccionar</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Fecha límite</label>
+                <input type="date" id="fecha" required>
+            </div>
+
+            <button class="btn-full" type="submit">
+                Agregar tarea
+            </button>
+
         </form>
     </section>
 
-    <section class="kanban">
-
+<section class="kanban" id="tareas">
         <div class="columna pendiente" id="pendientes">
             <h3>Pendientes <span class="contador">0</span></h3>
             <div class="tareas-container"></div>
@@ -76,7 +135,7 @@
 </main>
 
 <footer>
-    <p>© 2026 Leonardo Aguilera / Desarrollo Web + IA</p>
+    <p>© 2026 Leonardo Aguilera | Desarrollo Web + IA</p>
 </footer>
 
 <script src="assets/js/script.js"></script>

@@ -1,141 +1,109 @@
-# Documentación del uso de Inteligencia Artificial
+# Documentación de uso de Inteligencia Artificial
+
+## Proyecto
+Gestor Académico Inteligente
+
+## Estudiante
+Leonardo Aguilera
 
 ## Herramienta utilizada
 
-Durante el desarrollo de este proyecto utilicé:
+Durante el desarrollo del proyecto se utilizó:
 
 **ChatGPT (OpenAI)**
 
-como herramienta de apoyo para resolver dudas técnicas, mejorar el diseño y corregir errores durante el desarrollo del sistema.
+La herramienta fue utilizada principalmente como apoyo para resolver dudas técnicas, optimizar código y recibir sugerencias de mejora durante el proceso de desarrollo.
 
+# Uso de IA durante el desarrollo
 
-# ¿Cómo utilicé la IA?
+## 1. Apoyo en diseño visual
 
-La inteligencia artificial fue utilizada como apoyo durante distintas etapas del proyecto, principalmente para:
+Durante el desarrollo del sistema se consultó a la IA sobre mejoras visuales para lograr una interfaz más profesional.
 
-- corregir errores de código
-- mejorar el diseño visual
-- optimizar funcionalidades
-- resolver problemas de rutas
-- agregar nuevas características al sistema
+Ejemplo de consulta:
 
-En todo momento fue necesario revisar el código entregado por la IA y adaptarlo al proyecto.
+ "¿Qué colores más profesionales podría usar para mi proyecto?"
 
+La IA sugirió trabajar con tonos azules, colores sobrios y mejorar los efectos visuales.
 
-# 1. Creación inicial de la estructura HTML
+Con base en eso se implementó:
 
-## Prompt utilizado:
+- nueva paleta de colores
+- efectos hover
+- animaciones
+- transiciones
+- mejoras visuales generales
 
-"Crea la estructura HTML de un gestor de tareas tipo Kanban con formulario y columnas"
+## 2. Optimización del sistema de tareas
 
-## Ayuda entregada por IA
+Se realizaron consultas para mejorar la lógica del proyecto.
 
-Se generó una estructura base con:
+Ejemplo:
 
-- header
-- formulario
-- tablero de tareas
-- footer
+ "¿Cómo puedo mejorar el flujo de tareas de mi sistema Kanban?"
 
-## Ajustes realizados manualmente
+A partir de eso se agregaron mejoras como:
 
-Posteriormente se reorganizó el código para cumplir mejor con la rúbrica:
-
-- uso de etiquetas semánticas
-- mejora de labels
-- inputs requeridos
-- organización del contenido
-
-
-# 2. Corrección de estilos CSS
-
-Durante las primeras pruebas el diseño presentaba problemas:
-
-- columnas desordenadas
-- tarjetas mal alineadas
-- botones desordenados
-- colores poco atractivos
-
-## Prompt utilizado:
-
-"Corrige mi CSS y hazlo más profesional"
-
-## Resultado
-
-La IA ayudó a:
-
-- reorganizar el layout
-- mejorar colores
-- agregar sombras
-- mejorar botones
-- agregar diseño responsive
-
-
-# 3. Problemas con imágenes y logo
-
-Inicialmente el logo y fondo no aparecían correctamente por errores en las rutas.
-
-## Prompt utilizado:
-
-"No aparece mi imagen en CSS"
-
-## Solución
-
-Se corrigieron rutas de carpetas:
-
-- assets/img
-- favicon
-- logo principal
-
-
-# 4. Desarrollo JavaScript
-
-Se utilizó IA para mejorar la lógica del sistema.
-
-## Funcionalidades implementadas
-
-- agregar tareas
-- mover tareas
-- completar tareas
-- eliminar tareas
+- columnas organizadas
 - contadores automáticos
+- mejor visualización de tareas
 
+## 3. Corrección de errores
 
-# 5. Mejora avanzada del proyecto
+Durante el desarrollo surgieron errores específicos.
 
-Posteriormente se agregaron mejoras extras:
+Ejemplo:
 
-- historial de tareas eliminadas
-- reactivación de tareas
-- alertas por fecha límite
-- aviso de entrega hoy
-- scroll interno para columnas con muchas tareas
+ "Tengo problemas al eliminar tareas del historial"
 
-## Prompt utilizado
+La IA ayudó a identificar posibles causas relacionadas con:
 
-"Agrega mejoras extras para hacer el proyecto más completo"
+- localStorage
+- IDs
+- renderizado
 
+Posteriormente se realizaron pruebas manuales para validar la solución.
 
-# Ajustes manuales realizados
+## 4. Alertas automáticas
 
-Durante el proceso fue necesario corregir:
+Se consultó cómo mejorar la gestión de fechas.
 
-- errores en fechas
-- errores en historial
-- problemas de diseño
+Ejemplo:
+
+ "Quiero mostrar alertas cuando falten pocos días para entregar una tarea"
+
+Esto permitió implementar:
+
+- entrega hoy
+- tareas próximas
+- tareas vencidas
+
+## 5. Responsive Design
+
+Se realizaron consultas sobre adaptación a diferentes pantallas.
+
+Ejemplo:
+
+ "¿Cómo adaptar mi proyecto para celulares y tablets?"
+
+Esto ayudó a mejorar la visualización en distintos dispositivos.
+
+# Trabajo realizado manualmente
+
+Las siguientes actividades fueron desarrolladas directamente durante el proyecto:
+
+- estructura base del proyecto
 - organización de carpetas
-- pruebas manuales de funcionamiento
+- integración general del sistema
+- pruebas funcionales
+- corrección final
+- subida a GitHub
+- documentación final
 
+# Reflexión sobre el uso de IA
 
-# Reflexión personal
+La inteligencia artificial fue utilizada como una herramienta de apoyo durante el desarrollo, principalmente para resolver dudas específicas y obtener sugerencias de mejora.
 
-La inteligencia artificial fue una herramienta útil para avanzar más rápido y solucionar errores técnicos.
+Sin embargo, fue necesario revisar, adaptar y probar cada implementación para asegurar su correcto funcionamiento dentro del proyecto.
 
-Sin embargo, igualmente fue necesario:
-
-- entender el código
-- probar cada cambio
-- corregir errores manualmente
-- adaptar el proyecto a los requisitos solicitados
-
-La IA fue utilizada como apoyo al aprendizaje y no como reemplazo del trabajo realizado.
+El uso de IA permitió agilizar algunas etapas del desarrollo, pero el proceso de integración y validación final fue realizado manualmente.
